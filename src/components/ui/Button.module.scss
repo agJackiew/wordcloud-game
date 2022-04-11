@@ -1,0 +1,35 @@
+@import "../../styles/main";
+
+.btn {
+	font-size: 1.6rem;
+	font-weight: 300;
+	letter-spacing: .5rem;
+	background-color: $color-pink-dark;
+	color: $color-white;
+	border: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin: 2rem 0;
+	padding: 1.5rem 3rem;
+	border-radius: 30px;
+	cursor: pointer;
+
+	&:hover,
+	&:active {
+		background-color: rgba($color-pink-light, .4);
+		color: $color-pink-dark;
+	}
+
+	&__disabled {
+		cursor: initial;
+		background-color: $color-grey-light;
+		color: $color-white;
+
+		&:hover,
+		&:active {
+			cursor: initial;
+			background-color: $color-grey-light;
+			color: $color-white;
+		}
+	}
+}

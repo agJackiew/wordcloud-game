@@ -1,0 +1,78 @@
+@import "../../styles/main";
+
+.item[data-weight="1"] { --size: 1; }
+.item[data-weight="2"] { --size: 2; }
+.item[data-weight="3"] { --size: 3; }
+.item[data-weight="4"] { --size: 4; }
+.item[data-weight="5"] { --size: 5; }
+.item[data-weight="6"] { --size: 6; }
+.item[data-weight="7"] { --size: 7; }
+.item[data-weight="8"] { --size: 8; }
+.item[data-weight="9"] { --size: 9; }
+
+.item {
+  @include centerY;
+  font-size: 3rem;
+  color: $color-grey-dark;
+  margin-top: calc(var(--size) * .75rem + .5rem);
+  margin-bottom: 1rem;
+  margin-right: calc(var(--size) * .5rem + .5rem);
+  margin-left: calc(var(--size) * .5rem + .5rem);
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+
+  &--red {
+
+    & > * {
+      color: $color-red !important;
+    }
+    
+  }
+
+   &--green {
+
+    & > * {
+      color: $color-green !important;
+    }
+    
+  }
+
+  &--unclickable {
+    pointer-events: none;
+  }
+
+  & > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__chosen {
+  	color: $color-blue-light;
+  	text-align: center;
+    animation: bump .3s ease-out;
+  }
+
+  &__result {
+    font-size: 1.3rem;
+    width: 6rem;
+    text-align: center; 
+    opacity: 0;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 1rem;
+    }
+
+    &--vis {
+      opacity: 1;
+    } 
+  }
+
+  @media only screen and (max-width: 767px) {
+  	font-size: 1.8rem;
+    padding: 0 1.5rem;
+  	margin-top: calc(var(--size) * .25rem + .15rem);
+    margin-right: calc(var(--size) * .15rem + .15rem);
+    margin-left: calc(var(--size) * .1rem + .15rem);
+  }
+}

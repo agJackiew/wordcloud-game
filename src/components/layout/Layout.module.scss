@@ -1,0 +1,8 @@
+@import "../../styles/main";
+
+.main {
+	@include startY;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: $color-grey-lightest;
+}

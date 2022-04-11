@@ -1,0 +1,68 @@
+@import "../styles/main";
+
+.container {
+	@include centerY;
+	margin-top: 16rem;
+	padding: 1rem;
+
+	@media only screen and (max-width: 767px) {
+		width: 90vw;
+  	}
+}
+
+.header {
+	font-size: 10rem;
+	font-weight: 400;
+	text-align: center;	
+
+	@media only screen and (max-width: 767px) {
+  		font-size: 3rem;
+  	}
+}
+
+.form {
+	margin: 2rem 0;
+
+	&__input {
+		width: 40vw;
+		font-size: 2rem;
+		padding: 1.5rem;
+		outline: none;
+		border: 1px solid $color-pink-dark;
+		border-radius: 10px;
+		color: $color-pink-light;
+
+		&::placeholder {
+			color: rgba($color-pink-light, .8);
+			font-size: 1.6rem;
+		}
+
+		@media only screen and (max-width: 767px) {
+	  		width: 80vw;
+
+	  		&::placeholder {
+				color: rgba($color-pink-light, .8);
+				font-size: 1.3rem;
+			}
+	  	}
+	}
+}
+
+.link {
+	font-size: 1.6rem;
+	letter-spacing: .4rem;
+	background-color: $color-pink-dark;
+	color: $color-white;
+	border: none;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.5rem 3rem;
+	border-radius: 30px;
+	cursor: pointer;
+
+	&:hover,
+	&:active {
+		background-color: rgba($color-pink-light, .4);
+		color: $color-pink-dark;
+	}
+}
