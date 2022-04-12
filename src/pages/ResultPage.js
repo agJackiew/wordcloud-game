@@ -5,6 +5,7 @@ import styles from './ResultPage.module.scss';
 import Button from '../components/ui/Button';
 import usePrepareData from '../hooks/usePrepareData';
 import { gameActions } from '../store/index';
+import { userActions } from '../store/index';
 
 const ResultPage = () => {
 
@@ -19,6 +20,11 @@ const ResultPage = () => {
 		navigate('/game');
 	};
 
+	const startWithNewUserHandler = () => {
+		dispatch(userActions.logout());
+		navigate('/');
+	};
+
 	return (
 		<section className={styles.container}>
 			<div>
@@ -31,6 +37,7 @@ const ResultPage = () => {
 				</p>
 			</div>
 			<Button text="New Game" type="button" onClick={newGameHandler}/>
+			<Button text="Start with new user" type="button" onClick={startWithNewUserHandler}/>
 		</section>
 	)
 }
