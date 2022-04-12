@@ -1,14 +1,12 @@
-import { Fragment, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './HomePage.module.scss';
-import Button from '../components/ui/Button';
-import ButtonLink from '../components/ui/ButtonLink';
+import Button from '../components/ui/Button';	
 import usePrepareData from '../hooks/usePrepareData';
 import { gameActions } from '../store/index';
 import { userActions } from '../store/index';
-import { MOCK_DATA } from '../assets/mock-data';
 
 const HomePage = () => {
 
@@ -36,7 +34,7 @@ const HomePage = () => {
 	return (
 		<section className={styles.container}>
 			<h1 className={styles.header}>Wordcloud Game</h1>
-			<form className={styles.form}>
+			<form className={styles.form} onSubmit={(e) => (e.preventDefault())}>
 				<input 
 					id="nickname"
 					type="text" 

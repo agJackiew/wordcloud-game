@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 
 import WordCloud from '../components/wordcloud/WordCloud';
 
-const GamePage = (props) => {
+const GamePage = () => {
 
 	return (
 		<Fragment>

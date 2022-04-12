@@ -60,5 +60,7 @@ const store = configureStore({
 
 export const gameActions = gameSlice.actions;
 export const userActions = userSlice.actions;
+export const gameReducer = gameSlice.reducer;
+export const userReducer = userSlice.reducer;
 
 export default store;

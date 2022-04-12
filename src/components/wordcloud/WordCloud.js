@@ -7,22 +7,17 @@ import ButtonLink from '../ui/ButtonLink';
 import WordCloudItem from './WordCloudItem';
 import { gameActions } from '../../store/index';
 
-const WordCloud = (props) => {
+const WordCloud = () => {
 
 	const dispatch = useDispatch();
-
 	const words = useSelector(state => state.game.words);
 	const question = useSelector(state => state.game.question);
-	const goods = useSelector(state => state.game.goodAnswers);
-	const bads = useSelector(state => state.game.badAnswers);
 
 	const [isVerified, setIsVerified] = useState(false);
 
 	const verifyHandler = () => {
 		setIsVerified(true);
-		
 		dispatch(gameActions.checkAnswers());
-		
 	};
 
 	return (
@@ -34,14 +29,15 @@ const WordCloud = (props) => {
 						(<WordCloudItem 
 							key={index} 
 							item={item} 
-							isVerified={isVerified}
-							
+							isVerified={isVerified}		
 						/>)
 					)}
 				</ul>
 			</div>
-			{!isVerified ? <Button type="button" text="Check Answers" onClick={verifyHandler} />
-				: <ButtonLink text="Finish Game" linkTo="/result" />}
+			{!isVerified ? 
+				<Button type="button" text="Check Answers" onClick={verifyHandler} /> :
+				<ButtonLink text="Finish Game" linkTo="/result" />
+			}
 		</Fragment>
 	);
 };

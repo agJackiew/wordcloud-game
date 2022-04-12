@@ -12,17 +12,16 @@ const WordCloudItem = (props) => {
 	const [isChos, setIsChos] = useState(false);
 	const [color, setColor] = useState('');
 
-	const result = props.item.isGood ? "Good" : "Bad";
-	
+	//create random margins on list items
 	const { getRandom } = useRandom();
 	const weight = useMemo(() => getRandom(1, 9), []);
+
+	const answer = props.item.isGood ? "Good" : "Bad";
 
 	const chooseHandler = () => {
 		setIsChos(isChos => !isChos);
 		dispatch(gameActions.chooseAnswer({...props.item, isChosen: !isChos}));
 	};
-
-	const unclick = props.isVerified ? 'item--unclickable' : '';
 
 	useEffect(() => {
 		if (props.isVerified && isChos) {
@@ -41,7 +40,7 @@ const WordCloudItem = (props) => {
 			data-weight={weight} 
 			className={`${styles['item']} ${styles[color]} ${styles[props.isVerified ? 'item--unclickable' : '']} `} 
 		>
-			<p className={`${styles['item__result']} ${props.isVerified && styles['item__result--vis']}`}>{result}</p>
+			<p className={`${styles['item__answer']} ${props.isVerified && styles['item__answer--vis']}`}>{answer}</p>
 			<p className={isChos ? styles.item__chosen : ''} onClick={chooseHandler}>{props.item.value}</p>
 		</li>
 	);
