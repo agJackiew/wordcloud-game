@@ -23,7 +23,7 @@ const ResultPage = () => {
 		<section className={styles.container}>
 			<div>
 				<p>Congratulations,</p>
-				<p className={styles.result}>{nick}</p>
+				<p className={styles.nick}>{nick}</p>
 				<p>
 					<span>Your score:&nbsp;</span>
 					<span className={styles.result}>{result}</span>

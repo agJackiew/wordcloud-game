@@ -21,6 +21,8 @@
   text-decoration: none;
   position: relative;
   cursor: pointer;
+  animation: drop .3s ease-out;
+  animation-delay: calc(var(--size)*.1s);
 
   &--red {
 
@@ -65,6 +67,7 @@
 
     &--vis {
       opacity: 1;
+      animation: fadeIn .3s;
     } 
   }
 

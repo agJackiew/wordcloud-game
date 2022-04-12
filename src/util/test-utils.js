@@ -6,14 +6,12 @@ import { BrowserRouter } from 'react-router-dom'
 import { userReducer } from '../store/index'
 import { gameReducer } from '../store/index'
 
+
 function render(
   ui,
   {
     preloadedState,
-    store = configureStore({ reducer: { 
-      user: userReducer,
-      game: gameReducer
-    }, preloadedState }),
+    store = configureStore({ reducer: { user: userReducer, game: gameReducer }, preloadedState }),
     ...renderOptions
   } = {}
 ) {
@@ -23,6 +21,7 @@ function render(
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions })
 }
 
+// re-export everything
 export * from '@testing-library/react'
-
+// override render method
 export { render }

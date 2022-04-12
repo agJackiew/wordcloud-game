@@ -12,9 +12,16 @@
   	}
 }
 
+.nick {
+	font-size: 3rem;
+	color: $color-pink-dark;
+	animation: fadeLeftIn .3s ease-out;
+}
+
 .result {
 	font-size: 3rem;
 	color: $color-pink-dark;
+	animation: fadeIn .3s ease-out;
 }
 
 
