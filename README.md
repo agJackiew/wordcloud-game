@@ -1,14 +1,14 @@
 # Wordcloud game
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-*Features:
-  *Uses mock data to display cloud of words for user who entered nick
-  *Result is checked and displayed
-  *Score is computed and dispayed according to formula: 
+* Features:
+  * Uses mock data to display cloud of words for user who entered nick
+  * Result is checked and displayed
+  * Score is computed and dispayed according to formula: 
   (checked correct answers * 2) - (checked uncorrect answers + unchecked correct answers)
-*Technologies:
-  *React Redux
-  *Sass
+* Technologies:
+  * React Redux
+  * Sass
   
 ## Available Scripts
 
